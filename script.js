@@ -6,11 +6,12 @@ function reveal() {
         var elementTop = reveals[i].getBoundingClientRect().top;
         var elementVisible = 100;
 
-        if (elementTop < windowHeight - elementVisible) {
-            reveals[i].classList.add("active");
-        } else {
-            reveals[i].classList.remove("active");
+        while (elementTop > windowHeight - elementVisible) {
+            reveals[i].style.visibility = "hidden";
         }
+
+        reveals[i].style.visibility = "visible";
+
     }
 }
 
